@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MoneyWallet</string>
+    g>
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="gender">gender</string>
+    <string name="username">Username</string>
+    <string name="national_id">National Id</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="email">Email</string>
+    <string name="phone_number">phone number</string>
+    <string name="pin">Pin</string>
+    <string name="confirm_pin">Confirm Pin</string>
+    <string name="already_a_member_login">Already a member? Login</string>
+    <string name="registration">Registration</string>
+    <string name="title_activity_network_security_config">network_security_config</string>
+    <string name="register">Register</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_view_customer">ViewCustomer</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="logim">Logim</string>
+</resources>

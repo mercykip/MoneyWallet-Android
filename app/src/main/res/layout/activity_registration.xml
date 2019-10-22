@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:textAlignment="center"
+
+    tools:context=".Registration">
+
+
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/customer_name"
+        android:hint="Name"
+        android:inputType="text"
+        />
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/national_id"
+        android:inputType="number"
+        android:hint="National Id"
+
+        />
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/radioSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+          />
+        <RadioButton android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            />
+    </RadioGroup>
+
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/username"
+        android:hint="username"
+        android:inputType="text"
+        />
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/address"
+        android:hint="address"
+        android:inputType="text"
+        />
+    <EditText
+
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/email"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/phone_number"
+        android:hint="phone number"
+        android:inputType="number"
+        />
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/pin"
+        android:hint="pin"
+        android:inputType="number"
+        />
+    <EditText
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/confirm_pin"
+        android:hint="confirm password"
+        android:inputType="number"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegistration"
+        android:text="Registration"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogin"
+        android:text="Login"
+
+        />
+</LinearLayout>
