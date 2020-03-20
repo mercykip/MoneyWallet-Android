@@ -4,19 +4,28 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginInfo {
-
     @SerializedName("response_status")
     @Expose
     private Boolean responseStatus;
     @SerializedName("response_message")
     @Expose
     private String responseMessage;
-    @SerializedName("response_user")
+    @SerializedName("customer_id")
     @Expose
-    private String responseUser;
-    @SerializedName("response_pin")
+    private Integer customerId;
+    @SerializedName("username")
     @Expose
-    private String responsePin;
+    private String username;
+    @SerializedName("pin")
+    @Expose
+    private Integer pin;
+
+    public LoginInfo( Integer customerId, String username, Integer pin) {
+
+        this.customerId = customerId;
+        this.username = username;
+        this.pin = pin;
+    }
 
     public Boolean getResponseStatus() {
         return responseStatus;
@@ -34,21 +43,31 @@ public class LoginInfo {
         this.responseMessage = responseMessage;
     }
 
-    public String getResponseUser() {
-        return responseUser;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setResponseUser(String responseUser) {
-        this.responseUser = responseUser;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    public String getResponsePin() {
-        return responsePin;
+    public String getUsername() {
+        return username;
     }
 
-    public void setResponsePin(String responsePin) {
-        this.responsePin = responsePin;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
+    public Integer getPin() {
+        return pin;
+    }
+
+    public void setPin(Integer pin) {
+        this.pin = pin;
+    }
+
 }
+
 
 

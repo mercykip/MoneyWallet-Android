@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CheckBalance">
+    tools:context=".FundTransfer">
     <EditText
 
         android:padding="10dp"
@@ -25,15 +25,15 @@
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:id="@+id/username"
-        android:hint="Username"
+        android:id="@+id/amount"
+        android:hint="Amount"
         android:inputType="text"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnBalance"
-        android:text="Balance"
+        android:id="@+id/btnFundTransfer"
+        android:text="Fund Transfer"
 
         />
 </LinearLayout>

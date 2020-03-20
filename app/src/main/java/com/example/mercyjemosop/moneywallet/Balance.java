@@ -2,23 +2,18 @@ package com.example.mercyjemosop.moneywallet;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 public class Balance {
-
-
     @SerializedName("response_status")
     @Expose
     private Boolean responseStatus;
     @SerializedName("response_message")
     @Expose
     private String responseMessage;
-    @SerializedName("response_password")
+    @SerializedName("username")
     @Expose
-    private String responsePassword;
-    @SerializedName("response_form_password")
+    private String username;
+    @SerializedName("amount")
     @Expose
-    private String responseFormPassword;
-    @SerializedName("response_amount")
-    @Expose
-    private Integer responseAmount;
+    private Integer amount;
 
     public Boolean getResponseStatus() {
         return responseStatus;
@@ -36,27 +31,19 @@ public class Balance {
         this.responseMessage = responseMessage;
     }
 
-    public String getResponsePassword() {
-        return responsePassword;
+    public String getUsername() {
+        return username;
     }
 
-    public void setResponsePassword(String responsePassword) {
-        this.responsePassword = responsePassword;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getResponseFormPassword() {
-        return responseFormPassword;
+    public Integer getAmount() {
+        return amount;
     }
 
-    public void setResponseFormPassword(String responseFormPassword) {
-        this.responseFormPassword = responseFormPassword;
-    }
-
-    public Integer getResponseAmount() {
-        return responseAmount;
-    }
-
-    public void setResponseAmount(Integer responseAmount) {
-        this.responseAmount = responseAmount;
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }
