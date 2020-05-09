@@ -1,4 +1,4 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.mercyjemosop.moneywallet.api.LoginInfo;
+import com.example.mercyjemosop.moneywallet.R;
+import com.example.mercyjemosop.moneywallet.controller.SharedPrefManager;
+import com.example.mercyjemosop.moneywallet.model.ApiClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +29,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);sharedPreferenceConfig=new SharedPrefManager(this);
         cpin = findViewById(R.id.pin);
         cusername = findViewById(R.id.username);
-        bn = findViewById(R.id.btLogin);
+         bn=findViewById(R.id.btnLogin);
 //        if(sharedPreferenceConfig.loggedin()) {
 //            startActivity(new Intent(Login.this, Home.class));
 //        }
@@ -61,7 +66,7 @@ public class Login extends AppCompatActivity {
         String pin=cpin.getText().toString().trim();
 
 
-        Call<LoginInfo> call=ApiClient.getInstance().getApi().userLogin(username,pin);
+        Call<LoginInfo> call= ApiClient.getInstance().getApi().userLogin(username,pin);
         call.enqueue(new Callback<LoginInfo>() {
             @Override
             public void onResponse(Call<LoginInfo> call, Response<LoginInfo> response) {

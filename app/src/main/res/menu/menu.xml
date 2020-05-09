@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item  android:id="@+id/checkB"
+        android:title="checkBalance"
+        app:showAsAction="never"
+        />
+    <item  android:id="@+id/fundT"
+        android:title="FundTransfer"
+        app:showAsAction="never"
+        />
+    <item  android:id="@+id/withD"
+        android:title="Withdraw"
+        app:showAsAction="never"
+        />
+    <item  android:id="@+id/miniStatement"
+        android:title="miniStatement"
+        app:showAsAction="never"
+        />
+</menu>

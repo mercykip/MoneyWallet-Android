@@ -1,4 +1,13 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.model;
+
+import com.example.mercyjemosop.moneywallet.api.Balance;
+import com.example.mercyjemosop.moneywallet.api.MiniStatementInfo;
+import com.example.mercyjemosop.moneywallet.api.FundTransferInfo;
+import com.example.mercyjemosop.moneywallet.api.LoginInfo;
+import com.example.mercyjemosop.moneywallet.api.UserInfo;
+import com.example.mercyjemosop.moneywallet.api.WithdthrawInfo;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -7,7 +16,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface ApiInterface {
     //Call Post registration endpoint+66666666666666+++++++++++++++++++++++++++
@@ -15,15 +23,10 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("registration")
     Call<UserInfo> callRegister(
-            //@Field("customer_id") Integer customer_id,
             @Field(" customerName") String customerName,
-            @Field("nationalId") Integer nationalId,
             @Field("accountNumber") String accountNumber,
             @Field("username") String username,
-            @Field("gender") String gender,
             @Field("email") String email,
-            @Field("phoneNumber") Integer phoneNumber,
-            @Field("address") String address,
             @Field("confirmPin") Integer confirmPin,
             @Field("pin") Integer pin
     );
@@ -61,5 +64,12 @@ public interface ApiInterface {
            @Field("accountNumber") String accountNumber
 
    );
+    @GET("miniStatement/{id}")
+    Call<List<MiniStatementInfo>>miniStatement(
+
+            @Path("id") Integer customerId
+
+
+    );
 
 }

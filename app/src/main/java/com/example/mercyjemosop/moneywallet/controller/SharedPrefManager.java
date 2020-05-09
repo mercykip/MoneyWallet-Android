@@ -1,8 +1,10 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.controller;
 
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.mercyjemosop.moneywallet.api.LoginInfo;
 
 public class SharedPrefManager {
   private static SharedPrefManager sharedPref;
@@ -45,9 +47,9 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         //editor.clear();
-        editor.putInt("customerId",loginInfo.getCustomerId());
-        editor.putString("username",loginInfo.getUsername());
-        editor.putInt("pin",loginInfo.getPin());
+        editor.putInt("customerId",loginInfo.getResponseCustomerId());
+        editor.putString("username",loginInfo.getResponseUsername());
+        editor.putInt("pin",loginInfo.getResponsePin());
         editor.apply();
     }
     //check if user is loggedin

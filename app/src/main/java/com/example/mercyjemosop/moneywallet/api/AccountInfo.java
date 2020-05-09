@@ -1,4 +1,4 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.api;
 
 public class AccountInfo {
     private Integer amount;

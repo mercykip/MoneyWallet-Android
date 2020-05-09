@@ -1,35 +1,33 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.view;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.mercyjemosop.moneywallet.api.Balance;
+import com.example.mercyjemosop.moneywallet.api.LoginInfo;
+import com.example.mercyjemosop.moneywallet.R;
+import com.example.mercyjemosop.moneywallet.controller.SharedPrefManager;
+import com.example.mercyjemosop.moneywallet.model.ApiClient;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-
-//
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.view.View;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.Toast;
-//
-//import retrofit2.Call;
-//import retrofit2.Response;
-//
 public class CheckBalance extends AppCompatActivity {
     EditText tpassword;
     Button btn;
     private SharedPrefManager sharedPreferenceConfig;
-   // private SharedPrefManager sharedPreferenceConfig;
-    //    private Balance balance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +46,39 @@ public class CheckBalance extends AppCompatActivity {
 
 
     }
-public void getBalance(){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.fundT:
+                Toast.makeText(this, "Fund Transfer", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CheckBalance.this, FundTransfer.class);
+                // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                return true;
+            case R.id.withD:
+                Toast.makeText(this, "Withdraw", Toast.LENGTH_SHORT).show();
+                intent = new Intent(CheckBalance.this, Withdraw.class);
+                startActivity(intent);
+                return true;
+            case R.id.miniStatement:
+                Toast.makeText(this, "miniStatement", Toast.LENGTH_SHORT).show();
+                intent = new Intent(CheckBalance.this, MiniStatement.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void getBalance(){
        LoginInfo user=SharedPrefManager.getInstance(this).getUser();
-      Call<Balance> call=ApiClient.getInstance().getApi().balance(user.getCustomerId());
+      Call<Balance> call= ApiClient.getInstance().getApi().balance(user.getResponseCustomerId());
       call.enqueue(new Callback<Balance>() {
           @Override
           public void onResponse(Call<Balance> call, Response<Balance> response) {
@@ -87,48 +115,6 @@ public void getBalance(){
 
     }
 
-
-
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public void checkBalance() {
-//        //call client Api endpoint
-//        ApiInterface Interface = ApiClient.getClient().create(ApiInterface.class);
-//        Call<Balance> checkBalance1 = Interface.checkBalance();
-//        checkBalance1.enqueue(new retrofit2.Callback<Balance>() {
-//            @Override
-//            public void onResponse(Call<Balance> call, Response<Balance> response) {
-//            Balance balance= response.body();
-//          //  balance.getResponseName();
-//                if(balance!=null){
-//                    Toast.makeText(CheckBalance.this, "res" +  balance.getResponseAmount(), Toast.LENGTH_SHORT).show();
-//                }else{
-//                    Toast.makeText(CheckBalance.this, "balance is null" , Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Balance> call, Throwable t) {
-//                Toast.makeText(CheckBalance.this, "res"+t.getMessage(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//    }
-//}

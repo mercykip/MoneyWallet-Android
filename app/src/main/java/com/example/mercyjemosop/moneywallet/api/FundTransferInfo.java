@@ -1,4 +1,4 @@
-package com.example.mercyjemosop.moneywallet;
+package com.example.mercyjemosop.moneywallet.api;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
